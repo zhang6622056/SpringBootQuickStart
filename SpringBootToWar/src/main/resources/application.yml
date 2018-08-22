@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    write:
+      url : jdbc:mysql://localhost:3306/yunduo_app?useUnicode=true&characterEncoding=utf8&noAccessToProcedureBodies=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      username : root
+      password : root
+      initialSize : 10
+      minIdle : 5
+      maxActive : 100
+      maxWait : 60000
+      timeBetweenEvictionRunsMillis : 60000
+      minEvictableIdleTimeMillis : 300000
+      validationQuery : SELECT 'x'
+      testWhileIdle : true
+      testOnBorrow : false
+      testOnReturn : false
+      poolPreparedStatements : true
+      maxPoolPreparedStatementPerConnectionSize : 20
+      filters : stat
+    read:
+      url : jdbc:mysql://localhost:3306/yunduo_app?useUnicode=true&characterEncoding=utf8&noAccessToProcedureBodies=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      username : root
+      password : root
+      initialSize : 10
+      minIdle : 5
+      maxActive : 100
+      maxWait : 60000
+      timeBetweenEvictionRunsMillis : 60000
+      minEvictableIdleTimeMillis : 300000
+      validationQuery : SELECT 'x'
+      testWhileIdle : true
+      testOnBorrow : false
+      testOnReturn : false
+      poolPreparedStatements : true
+      maxPoolPreparedStatementPerConnectionSize : 20
+      filters : stat
+
+#打开后缀.*匹配
+---
+spring:
+  mvc :
+    pathmatch:
+      use-suffix-pattern : true
+
+---
+server:
+  port : 7080
+  servlet :
+    context-path : /
