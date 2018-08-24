@@ -3,6 +3,38 @@
 <mapper namespace="com.system.mapper.main.MainUserMapper" >
 
 
+    <resultMap id="mainUserMap" type="com.system.biz.rpc.response.main.MainUserResponse">
+        <result column="user_id" property="userId" />
+        <result column="nickname" property="nickname" />
+        <result column="real_name" property="realname" />
+        <result column="remark" property="remark" />
+        <result column="head_img" property="headImg" />
+    </resultMap>
+
+    <select id="getMainUserList" resultMap="mainUserMap" parameterType="java.util.Map">
+       SELECT
+            tmu.user_id,
+            tu.nickname,
+            tu.real_name,
+            tu.remark,
+            tu.head_img
+        FROM
+            t_main_user tmu
+        LEFT JOIN t_user tu ON tmu.user_id = tu.id
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

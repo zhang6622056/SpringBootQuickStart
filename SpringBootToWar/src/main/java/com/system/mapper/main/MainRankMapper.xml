@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.main.MainRankMapper" >
+    <resultMap id="rankMap" type="com.system.biz.rpc.response.main.MainLoveRankResponse">
+        <result column="id" property="id" />
+        <result column="nickname" property="nickname" />
+        <result column="love_count" property="loveCount" />
+        <result column="head_img" property="headImg" />
+    </resultMap>
+
+
+    <select id="getRankList" resultMap="rankMap" parameterType="java.util.Map">
+        SELECT
+            id,
+            nickname,
+            love_count,
+            head_img
+        FROM
+            t_user ORDER BY love_count DESC limit 0,10
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

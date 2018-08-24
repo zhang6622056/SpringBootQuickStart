@@ -2,6 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.system.mapper.main.MainMarkMapper" >
 
+    <resultMap id="mainMarkMap" type="com.system.biz.rpc.response.main.MainMarkResponse">
+        <id column="id" property="id"/>
+        <result column="mark_id" property="markId" />
+        <result column="mark_title" property="markTitle" />
+        <result column="mark_img" property="markImg" />
+    </resultMap>
+
+
+
+    <select id="getListMainMark" resultMap="mainMarkMap" parameterType="java.util.Map">
+       SELECT
+            tmm.id,
+            tmm.mark_id,
+            tm.mark_title,
+            tm.mark_img
+        FROM
+            t_main_mark tmm
+        LEFT JOIN t_mark tm ON tmm.mark_id = tm.id
+        WHERE tmm.x_state = #{state} AND tmm.rec_type = #{type} ORDER BY tmm.order_priority desc
+    </select>
+
+
+
+
 
 
 

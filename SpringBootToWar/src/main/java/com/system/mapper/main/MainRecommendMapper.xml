@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.main.MainRecommendMapper" >
+    <resultMap id="mainRecMap" type="com.system.biz.rpc.response.main.MainRecommendResponse">
+        <result column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="image" property="image" />
+        <result column="num_cou" property="numCou" />
+        <result column="rec_type" property="recType" />
+        <result column="rec_href" property="recHref" />
+    </resultMap>
+
+
+    <select id="getListMainRec" resultMap="mainRecMap" parameterType="java.util.Map">
+         SELECT
+            id,
+            title,
+            image,
+            num_cou,
+            rec_type,
+            rec_href
+        FROM
+            t_main_recommend WHERE x_state = #{state}
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

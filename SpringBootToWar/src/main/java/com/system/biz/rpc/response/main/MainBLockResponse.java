@@ -1,10 +1,12 @@
-package com.system.entity.main;
+package com.system.biz.rpc.response.main;
+
+import java.io.Serializable;
 
 /**
- * 首页推荐版块
- * Created by Nero on 2018-08-22.
+ * Created by admin on 2018-08-24.
  */
-public class MainBlockVo {
+public class MainBLockResponse implements Serializable{
+
     private Long id;
     private String blockImg;        //标题图
     private String blockTitle;         //'标题'
@@ -50,44 +52,20 @@ public class MainBlockVo {
         this.markIdOne = markIdOne;
     }
 
-    public Long getStoryOne() {
-        return storyOne;
-    }
-
-    public void setStoryOne(Long storyOne) {
-        this.storyOne = storyOne;
-    }
-
-    public Long getMarkIdTwo() {
-        return markIdTwo;
-    }
-
-    public void setMarkIdTwo(Long markIdTwo) {
-        this.markIdTwo = markIdTwo;
-    }
-
-    public Long getStoryTwo() {
-        return storyTwo;
-    }
-
-    public void setStoryTwo(Long storyTwo) {
-        this.storyTwo = storyTwo;
-    }
-
-    public Long getSearchMarkId() {
-        return searchMarkId;
-    }
-
-    public void setSearchMarkId(Long searchMarkId) {
-        this.searchMarkId = searchMarkId;
-    }
-
     public String getMarkTextOne() {
         return markTextOne;
     }
 
     public void setMarkTextOne(String markTextOne) {
         this.markTextOne = markTextOne;
+    }
+
+    public Long getStoryOne() {
+        return storyOne;
+    }
+
+    public void setStoryOne(Long storyOne) {
+        this.storyOne = storyOne;
     }
 
     public String getStoryTextOne() {
@@ -98,6 +76,14 @@ public class MainBlockVo {
         this.storyTextOne = storyTextOne;
     }
 
+    public Long getMarkIdTwo() {
+        return markIdTwo;
+    }
+
+    public void setMarkIdTwo(Long markIdTwo) {
+        this.markIdTwo = markIdTwo;
+    }
+
     public String getMarkTextTwo() {
         return markTextTwo;
     }
@@ -106,11 +92,27 @@ public class MainBlockVo {
         this.markTextTwo = markTextTwo;
     }
 
+    public Long getStoryTwo() {
+        return storyTwo;
+    }
+
+    public void setStoryTwo(Long storyTwo) {
+        this.storyTwo = storyTwo;
+    }
+
     public String getStoryTextTwo() {
         return storyTextTwo;
     }
 
     public void setStoryTextTwo(String storyTextTwo) {
         this.storyTextTwo = storyTextTwo;
+    }
+
+    public Long getSearchMarkId() {
+        return searchMarkId;
+    }
+
+    public void setSearchMarkId(Long searchMarkId) {
+        this.searchMarkId = searchMarkId;
     }
 }

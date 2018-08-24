@@ -2,6 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.system.mapper.main.MainBlockMapper" >
 
+    <resultMap id="mainBlockMap" type="com.system.entity.main.MainBlockVo">
+        <id column="id" property="id"/>
+        <result column="block_img" property="blockImg" />
+        <result column="block_title" property="blockTitle" />
+        <result column="mark_id_one" property="markIdOne" />
+        <result column="mark_text_one" property="markTextOne" />
+        <result column="story_one" property="storyOne" />
+        <result column="story_text_one" property="storyTextOne" />
+        <result column="mark_id_two" property="markIdTwo" />
+        <result column="mark_text_two" property="markTextTwo" />
+        <result column="story_two" property="storyTwo" />
+        <result column="story_text_two" property="storyTextTwo" />
+        <result column="search_mark_id" property="searchMarkId" />
+    </resultMap>
+
+    <select id="getMainBlockList" resultMap="mainBlockMap" parameterType="java.util.Map">
+       SELECT
+            id,
+            block_img,
+            block_title,
+            mark_id_one,
+            mark_text_one,
+            story_one,
+            story_text_one,
+            mark_id_two,
+            mark_text_two,
+            story_two,
+            story_text_two,
+            search_mark_id
+        FROM
+            t_main_block ORDER BY ID DESC
+    </select>
+
+
 
 
 

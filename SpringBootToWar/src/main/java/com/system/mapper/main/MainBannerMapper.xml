@@ -2,6 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.system.mapper.main.MainBannerMapper" >
 
+    <resultMap id="bannerMap" type="com.system.entity.main.MainBannerVo">
+        <id column="id" property="id"/>
+        <result column="ban_title" property="banTitle" />
+        <result column="ban_intro" property="banIntro" />
+        <result column="ban_img" property="banImg" />
+        <result column="ban_type" property="banHref" />
+        <result column="ban_href" property="banType" />
+        <result column="x_state" property="xState" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+
+
+    <select id="getListMainBanner" resultMap="bannerMap" parameterType="java.util.Map">
+       SELECT
+            id,
+            ban_title,
+            ban_intro,
+            ban_img,
+            ban_type,
+            ban_href,
+            x_state,
+            create_time
+        FROM
+            t_main_banner
+        WHERE
+            x_state = #{state}
+        ORDER BY
+            order_priority DESC
+    </select>
+
+
+
+
 
 
 
