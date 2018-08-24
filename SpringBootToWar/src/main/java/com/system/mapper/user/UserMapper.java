@@ -1,4 +1,4 @@
-package com.system.mapper;
+package com.system.mapper.user;
 
 /**
  * 用户mapper

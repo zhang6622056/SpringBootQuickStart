@@ -1,4 +1,4 @@
-package com.system.mapper;
+package com.system.mapper.main;
 
 /**
  * 首页标签推荐

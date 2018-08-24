@@ -1,4 +1,4 @@
-package com.system.mapper;
+package com.system.mapper.main;
 
 /**
  * Created by admin on 2018-08-22.

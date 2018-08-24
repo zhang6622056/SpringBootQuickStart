@@ -1,4 +1,4 @@
-package com.system.mapper;
+package com.system.mapper.album;
 
 /**
  *专辑相关

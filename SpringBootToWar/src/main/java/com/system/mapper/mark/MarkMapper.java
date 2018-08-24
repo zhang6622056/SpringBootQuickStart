@@ -1,4 +1,4 @@
-package com.system.mapper;
+package com.system.mapper.mark;
 
 /**
  * 标签相关

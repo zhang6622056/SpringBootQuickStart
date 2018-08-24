@@ -47,3 +47,11 @@ server:
   port : 7080
   servlet :
     context-path : /
+
+
+---
+sms:
+  send:
+    url : http://47.95.33.177:9002/df_httpserver/smsSend.do
+    username : 100001
+    pwd : E10LFDGLKF20F883E0F8830F883
