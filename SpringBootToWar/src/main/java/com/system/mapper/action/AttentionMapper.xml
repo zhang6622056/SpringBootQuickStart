@@ -3,6 +3,31 @@
 <mapper namespace="com.system.mapper.action.AttentionMapper" >
 
 
+    <insert id="insert" parameterType="com.system.entity.action.AttentionVo">
+      INSERT INTO T_USER_ATTENTION (
+            att_from_user,
+            att_to_user,
+            att_time
+        )
+        VALUES(#{attFromUser}, #{attToUser}, #{atTime})
+    </insert>
+
+
+
+
+    <select id="selValidate" parameterType="java.util.Map" resultType="java.lang.Long">
+        SELECT
+            COUNT(1)
+        FROM
+            T_USER_ATTENTION
+        WHERE
+            att_from_user = #{userId}
+        AND att_to_user = #{toUserId}
+    </select>
+
+
+
+
 
 
 

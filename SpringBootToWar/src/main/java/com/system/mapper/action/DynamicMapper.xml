@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.action.DynamicMapper" >
+
+    <resultMap id="dynamicMap" type="com.system.entity.action.DynamicVo">
+        <id column="id" property="id"/>
+        <result column="create_time" property="createTime" />
+        <result column="user_id" property="userId" />
+        <result column="dy_text" property="dyText" />
+        <result column="title" property="title" />
+        <result column="dy_type" property="dyType" />
+        <result column="href" property="href" />
+        <result column="icon" property="icon" />
+    </resultMap>
+
+
+    <select id="getDynamicList" resultMap="dynamicMap" parameterType="java.util.Map">
+       SELECT
+            id,
+            create_time,
+            user_id,
+            dy_text,
+            title,
+            dy_type,
+            href,
+            icon
+        FROM
+            t_dynamic
+        <where>
+            <if test="userId != null">
+                user_id = #{userId}
+            </if>
+        </where>
+        ORDER BY create_time DESC limit #{start},#{size}
+    </select>
+
+    <select id="getDynamicListCount" resultType="java.lang.Long" parameterType="java.util.Map">
+        SELECT
+          COUNT(1)
+        FROM
+          t_dynamic
+        <where>
+            <if test="userId != null">
+                user_id = #{userId}
+            </if>
+        </where>
+        ORDER BY create_time DESC
+    </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <insert id="insert">
+        INSERT INTO t_dynamic (
+            create_time,
+            user_id,
+            dy_text,
+            title,
+            dy_type,
+            href,
+            icon
+        )
+        VALUES
+            (#{createTime}, #{userId},#{dyText},#{title},#{dyType},#{href},#{icon})
+    </insert>
+</mapper>
