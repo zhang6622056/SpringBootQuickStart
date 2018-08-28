@@ -69,10 +69,10 @@ public class HttpUtil {
         String url = "http://47.95.33.177:9002/df_httpserver/smsSend.do";
 
         Map<String,String> query = QueryChainMap.generateQueryChain()
-                    .chainPut("username","100001")
-                    .chainPut("pwd","E10LFDGLKF20F883E0F8830F883")
+                    .chainPut("username","zdbj00273")
+                    .chainPut("pwd","1E1B46F2E00378F62B084E80C75BDF2B")
                     .chainPut("mobile","18801222471")
-                    .chainPut("content","jkldfjkalsdfghhkjuhjkasdf");
+                    .chainPut("content","【云朵哥哥】jkldfjkalsdfghhkjuhjkasdf");
         System.out.println(doPost(url,query));
     }
 

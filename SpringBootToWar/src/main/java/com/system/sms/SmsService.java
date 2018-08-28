@@ -25,7 +25,7 @@ public class SmsService {
 
     public String sendSms(String mobile,String content){
         QueryChainMap<String,String> initParam = initParam();
-        initParam.chainPut("mobile",mobile).chainPut("content",content);
+        initParam.chainPut("mobile",mobile).chainPut("content","【云朵哥哥】"+content);
         return HttpUtil.doPost(url,initParam);
     }
 
@@ -35,4 +35,9 @@ public class SmsService {
                     .chainPut("username",username)
                     .chainPut("pwd",pwd);
     }
+
+
+
+
+
 }

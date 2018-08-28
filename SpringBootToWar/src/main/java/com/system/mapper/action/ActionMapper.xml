@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.action.ActionMapper" >
+
+
+    <insert id="commentInsert" parameterType="com.system.entity.action.StoryCommentVo">
+        INSERT INTO t_story_comment (
+            comment_text,
+            story_id,
+            user_id,
+            comment_time,
+            x_state,
+            comment_type,
+            comment_href
+        )
+        VALUES(#{commentText},#{storyId},#{userId},#{commentTime},#{xState},#{commentType},#{commentHref});
+    </insert>
+
+
+
+
+    <insert id="collectAlbumInsert" parameterType="java.util.Map">
+          INSERT INTO t_album_collect (
+            user_id,
+            album_id,
+            col_time,
+            x_state
+        )
+        VALUES
+            (#{userId},#{hrefId},#{colTime},#{xState})
+    </insert>
+
+
+
+    <insert id="collectStoryInsert" parameterType="java.util.Map">
+        INSERT INTO t_story_collect (
+            user_id,
+            story_id,
+            col_time,
+            x_state
+        )
+        VALUES
+            (#{userId},#{hrefId},#{colTime},#{xState})
+    </insert>
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

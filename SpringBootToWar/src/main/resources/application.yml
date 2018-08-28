@@ -53,5 +53,5 @@ server:
 sms:
   send:
     url : http://47.95.33.177:9002/df_httpserver/smsSend.do
-    username : 100001
-    pwd : E10LFDGLKF20F883E0F8830F883
+    username : zdbj00273
+    pwd : 1E1B46F2E00378F62B084E80C75BDF2B

@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.system.mapper.action.HistoryMapper" >
 
+    <insert id="insertStoryHistory" parameterType="java.util.Map">
+         INSERT INTO t_play_history (user_id, href_id,href_type,playtime)VALUES(#{userId},#{hrefId},#{hrefType},#{playTime})
+    </insert>
+
+
 
 
 
