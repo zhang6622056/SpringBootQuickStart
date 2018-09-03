@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.mapper.action.CollectMapper" >
+    <insert id="insert" parameterType="com.system.entity.action.StoryCommentVo">
+        INSERT INTO t_story_comment (
+            comment_text,
+            story_id,
+            user_id,
+            comment_time,
+            x_state,
+            comment_type,
+            comment_href
+        )
+        VALUES
+            (#{commentText},#{storyId},#{userId},#{commentTime},1,#{commentType},#{commentHref})
+    </insert>
+
+
+
+    <select id="listCommentStory" parameterType="java.util.Map" resultType="com.system.biz.rpc.response.action.CommentResponse">
+        SELECT
+            tsc.id,
+            tsc.comment_text,
+            tsc.story_id,
+            tsc.user_id,
+            tsc.comment_time,
+            tsc.comment_type,
+            tsc.comment_href,
+            tu.nickname,
+            tu.head_img
+        FROM
+            t_story_comment tsc
+        LEFT JOIN t_user tu ON tsc.user_id = tu.id
+        WHERE
+            story_id = #{storyId}
+        LIMIT #{start},
+         #{size}
+    </select>
+</mapper>

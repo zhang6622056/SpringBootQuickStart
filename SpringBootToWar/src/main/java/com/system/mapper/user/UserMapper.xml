@@ -3,8 +3,64 @@
 <mapper namespace="com.system.mapper.user.UserMapper" >
 
 
+    <resultMap id="userMap" type="com.system.biz.rpc.response.user.UserBasicResponse">
+        <id column="id" property="id"/>
+        <result column="head_img" property="headImg" />
+        <result column="email" property="email" />
+        <result column="mobile" property="mobile" />
+        <result column="password" property="password" />
+    </resultMap>
 
 
+    <insert id="insert" parameterType="com.system.entity.user.UserVo">
+        INSERT INTO t_user (
+            serial_no,
+            sex,
+            head_img,
+            age,
+            email,
+            mobile,
+            nickname,
+            remark,
+            PASSWORD,
+            user_area,
+            constellation,
+            industry,
+            birthday,
+            real_name,
+            person_id,
+            love_count
+        )
+        VALUES
+            (#{serialNo},#{sex},#{headImg},#{age},#{email},#{mobile},#{nickname},#{remark},#{password}
+            ,#{userArea},#{constellation},#{industry},#{birthday},#{realname},#{personId},#{loveCount})
+    </insert>
+
+
+    <select id="countUserByCondition" parameterType="java.util.Map" resultType="java.lang.Integer">
+      SELECT COUNT(1) FROM t_user
+      <where>
+          <if test="email != null">
+              email = #{email}
+          </if>
+          <if test="email != null">
+              and mobile = #{mobile}
+          </if>
+      </where>
+    </select>
+
+
+    <select id="getUserBasicInfo" resultMap="userMap" parameterType="java.util.Map">
+        SELECT id,mobile,email,password,head_img FROM t_user
+        <where>
+            <if test="email != null">
+                email = #{email}
+            </if>
+            <if test="email != null">
+                and mobile = #{mobile}
+            </if>
+        </where>
+    </select>
 
 
 </mapper>

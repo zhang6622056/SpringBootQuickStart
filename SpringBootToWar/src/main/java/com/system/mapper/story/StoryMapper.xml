@@ -2,7 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.system.mapper.story.StoryMapper" >
 
-
+    <insert id="insert" parameterType="com.system.entity.story.StoryVo">
+        INSERT INTO t_story (
+            st_title,
+            st_img,
+            st_time,
+            user_id,
+            st_desc,
+            play_count,
+            comment_count,
+            share_count,
+            collect_count,
+            st_href,
+            pub_time,
+            x_state,
+            al_id
+        )
+        VALUES
+            (#{st_title},#{stImg},#{stTime},#{userId},#{stDesc},#{playCount},#{commentCount},#{shareCount},#{collectCount},#{stHref},#{pubTime},#{xState},#{alId})
+    </insert>
 
 
 

@@ -6,13 +6,12 @@
         <id column="id" property="id"/>
         <result column="title" property="title" />
         <result column="intro" property="intro" />
-        <result column="head_img" property="head_img" />
-        <result column="user_id" property="user_id" />
-        <result column="create_time" property="create_time" />
-        <result column="last_update_time" property="last_update_time" />
-        <result column="st_count" property="st_count" />
+        <result column="head_img" property="headImg" />
+        <result column="user_id" property="userId" />
+        <result column="create_time" property="createTime" />
+        <result column="last_update_time" property="lastUpdateTime" />
+        <result column="st_count" property="stCount" />
     </resultMap>
-
 
     <resultMap id="alStoryMap" type="com.system.biz.rpc.response.album.AlbumDetailStoryResponse">
         <id column="id" property="id"/>
@@ -28,8 +27,6 @@
         <result column="st_href" property="stHref" />
         <result column="pub_time" property="pubTime" />
     </resultMap>
-
-
 
 
     <select id="getAlbumById" resultMap="alMap" parameterType="java.util.Map">
@@ -48,10 +45,7 @@
             id = #{albumId}
     </select>
 
-
-
-
-
+    <!--获取专辑故事详情-->
     <select id="getAlbumStoryById" resultMap="alStoryMap" parameterType="java.util.Map">
        SELECT
             id,
@@ -82,6 +76,38 @@
         WHERE
         al_id = #{albumId}
     </select>
+
+
+    <!--获取收藏专辑列表-->
+    <select id="getAlbumCollectList" resultMap="alMap" parameterType="java.util.Map">
+         SELECT
+            ta.id,
+            ta.title,
+            ta.intro,
+            ta.head_img,
+            ta.create_time,
+            ta.last_update_time,
+            ta.st_count
+            FROM
+            t_album_collect tac
+            LEFT JOIN t_album ta ON tac.album_id = ta.id
+            WHERE tac.user_id = #{userId}
+            order by tac.col_time desc limit #{start},#{size}
+    </select>
+
+
+
+    <select id="getAlbumCollectListCount" resultType="java.lang.Long">
+        SELECT
+          count(1)
+        FROM
+        t_album_collect tac
+        LEFT JOIN t_album ta ON tac.album_id = ta.id
+        WHERE tac.user_id = #{userId}
+    </select>
+
+
+
 
 
 

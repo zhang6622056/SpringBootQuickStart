@@ -39,4 +39,29 @@ public class AlbumController {
     }
 
 
+    /****
+     * 获取收藏的专辑列表
+     * @return
+     */
+    @RequestMapping(value="collAlbumList",method= RequestMethod.POST)
+    public JsonResult getCollectAlbumList(){
+
+
+
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

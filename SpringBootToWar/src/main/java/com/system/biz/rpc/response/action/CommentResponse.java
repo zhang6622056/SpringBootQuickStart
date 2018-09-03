@@ -1,12 +1,12 @@
-package com.system.entity.action;
+package com.system.biz.rpc.response.action;
 
 import java.util.Date;
 
 /**
- * 故事评论VO
- * Created by admin on 2018-08-27.
+ * 评论列表返回
+ * Created by admin on 2018-08-31.
  */
-public class StoryCommentVo {
+public class CommentResponse {
 
     private Long id;
     private String commentText; //'评论文案'
@@ -16,6 +16,12 @@ public class StoryCommentVo {
     private Integer xState;     //状态 1-有效 2无效
     private Integer commentType;    //评论类型 1-文本评论  2-语音评论
     private String commentHref; //如果是语音评论，此字段则保存语音评论地址
+
+
+    private String nickname; //用户昵称
+    private String headImg;     //用户头像
+
+
 
     public Long getId() {
         return id;
@@ -80,4 +86,20 @@ public class StoryCommentVo {
     public void setCommentHref(String commentHref) {
         this.commentHref = commentHref;
     }
+    public String getNickname() {
+        return nickname;
+    }
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+    public String getHeadImg() {
+        return headImg;
+    }
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
+
+
+
+
 }

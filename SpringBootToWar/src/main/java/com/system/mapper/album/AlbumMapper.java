@@ -17,7 +17,6 @@ public interface AlbumMapper {
      * @return
      */
     AlbumDetailBasicResponse getAlbumById(Map condition);
-
     /***
      * 获取专辑故事详情
      * @param condition
@@ -30,4 +29,14 @@ public interface AlbumMapper {
      * @return
      */
     Long getAlbumStoryCountById(Map condition);
+    /***
+     * 获取收藏专辑列表
+     * @return
+     */
+    List<AlbumDetailBasicResponse> getAlbumCollectList(Map condition);
+    /***
+     * 获取收藏专辑列表总数
+     * @return
+     */
+    Long getAlbumCollectListCount(Map condition);
 }

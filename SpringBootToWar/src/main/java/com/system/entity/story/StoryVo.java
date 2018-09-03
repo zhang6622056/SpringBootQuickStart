@@ -20,6 +20,9 @@ public class StoryVo {
     private String stHref;			//故事文件链接地址
     private Date pubTime;			//  发布时间
     private Integer xState;			//1-有效  2-无效
+    private Long alId;          //所属专辑ID
+
+
 
 
     public Long getId() {
@@ -124,5 +127,13 @@ public class StoryVo {
 
     public void setxState(Integer xState) {
         this.xState = xState;
+    }
+
+    public Long getAlId() {
+        return alId;
+    }
+
+    public void setAlId(Long alId) {
+        this.alId = alId;
     }
 }

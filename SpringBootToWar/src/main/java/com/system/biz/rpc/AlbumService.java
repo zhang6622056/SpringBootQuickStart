@@ -2,6 +2,7 @@ package com.system.biz.rpc;
 
 import com.system.biz.IAlbumService;
 import com.system.biz.rpc.common.JsonResult;
+import com.system.biz.rpc.request.album.AlbumCollectRequest;
 import com.system.biz.rpc.request.album.AlbumDetailRequest;
 import com.system.biz.rpc.response.album.AlbumDetailBasicResponse;
 import com.system.biz.rpc.response.album.AlbumDetailResponse;
@@ -50,6 +51,23 @@ public class AlbumService implements IAlbumService{
     }
 
 
+    /***
+     * 获取用户收藏的专辑列表
+     * @param albumCollectRequest
+     * @return
+     */
+    @Override
+    public JsonResult getCollectAlbumList(AlbumCollectRequest albumCollectRequest) {
+
+
+
+
+
+
+
+
+        return null;
+    }
 
 
 }
